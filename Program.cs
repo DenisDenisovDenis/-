@@ -83,3 +83,194 @@ namespace _4_матрица_и_3_массива
         }
     }
 }
+namespace _2дан_1массив_поменять_местами
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int[] array = { 1, 2, 3, 4, 5, 6, 7, 8, 9 };
+            int temp;
+            PrintArray(array);
+            for (int i = 0; i < array.Length - 1; i++)
+            {
+                temp = array[i];
+                array[i] = array[i + 1];
+                array[i + 1] = temp;
+                i++;
+            }
+            PrintArray(array);
+            Console.ReadLine();
+        }
+        private static void PrintArray(int[] array)
+        {
+            foreach (int element in array)
+                Console.Write(element + " ");
+            Console.WriteLine();
+        }
+    }
+}
+namespace _3Данмас_10_3чисел.мин_маусзхамена
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int b,c,d,p,p1;
+            p = 0;
+            //a = Convert.ToInt32(Console.ReadLine());
+            int[] nums = new int[10];
+            int[] myArray = new int[10];
+            Random rand = new Random();
+            for (int x = 0; x < myArray.Length; x++)
+            {
+                myArray[x] = rand.Next(100, 999);
+                Console.WriteLine(myArray[x]);
+                d = myArray[x] / 100;
+                c = myArray[x] / 10 % 10;
+                b = myArray[x]% 10;
+                if (d > b && d > c)
+                    p = d;
+                else if (b > c)
+                    p=d;
+                else
+                    p=c;
+                if (d < b && d < c)
+                    p1 = d;
+                else if (b < c)
+                    p1 = d;
+                else
+                    p1 = c;
+                nums[x] = p - p1;
+                p = 0;
+                p1 = 0;
+            };
+            for (int x = 0; x < nums.Length; x++)
+            {
+                Console.WriteLine(nums[x]);
+            }
+                Console.WriteLine();
+            Console.ReadKey();
+        }
+
+    }
+}
+namespace _5_Дан_2мерный_массив_найти_отр_в_кажд_стр
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int[,] matrix = new int[3, 3];
+            Random r = new Random();
+            int sum_str = 0;
+            Console.WriteLine("Существующая матрица");
+            for (int i = 0; i < 3; i++)
+            {
+                for (int j = 0; j < 3; j++)
+                {
+                    matrix[i, j] = r.Next(-100, 100);
+                    if(matrix[i, j]<0)
+                        sum_str += matrix[i, j]; 
+                    Console.Write(matrix[i, j] + " ");
+                }
+                Console.WriteLine("Сумма отрицательных элементов  " + sum_str);
+                sum_str = 0;
+            }
+            Console.ReadLine();
+        }
+    }
+}
+namespace _6_2мас_мин_номер_ст_10
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int[,] matrix = new int[3, 3];
+            Random r = new Random();
+            int p = 0;
+            Console.WriteLine("Существующая матрица");
+            for (int i = 0; i < 3; i++)
+            {
+                for (int j = 0; j < 3; j++)
+                {
+                    matrix[i, j] = r.Next(-100, 100);
+                    Console.WriteLine(matrix[i, j] + ' ');
+                    if (matrix[i, j] > 10)
+                    {
+                        p++;
+                        if (p == 3)
+                        {
+                            Console.WriteLine(i);
+                            break;
+                        }
+                    }
+                }
+            }
+            Console.ReadLine();
+        }
+    }
+}
+namespace _7изв_1мас_равн5_индекс
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int[] a = new int[10] { 1, 5, 3, 4, 5, 6, 7, 8, 5, 8 };
+            int index = 0;
+            a.First(n => { index++; return n == 5; });
+            Console.WriteLine("Номер первого элемента:" + index);
+            Console.ReadKey();
+        }
+    }
+}
+namespace _8Дан_массив_поменят_посл_с_первым
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Введите n");
+            int n = int.Parse(Console.ReadLine());
+            int[] a = new int[n];
+            for (int i = 0; i < n; i++)
+            {
+                Console.WriteLine("Введите {0}-й элемент", i + 1);
+                a[i] = int.Parse(Console.ReadLine());
+            }
+            int maxVal = a.Max();
+            int indexMax = Array.IndexOf(a, maxVal);
+            int h = 0;
+            h = a[0];
+            a[0] = a[maxVal]+1;
+            a[maxVal] = h;
+            for (int x = 0; x < a.Length; x++)
+            {
+                Console.WriteLine(a[x]);
+            }
+                Console.WriteLine();
+            Console.ReadKey();
+        }
+    }
+}
+namespace _13_дано_нат_число_найти_3
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Введите число");
+            string s1 = Console.ReadLine();
+            Console.WriteLine("Введите цифру");
+            char ch = Convert.ToChar(Console.ReadLine());
+            int indexOfChar = s1.IndexOf(ch);
+            if (indexOfChar == -1)
+                Console.WriteLine("Такой цифры нет");
+            else
+                Console.WriteLine("Цифра есть");
+            Console.ReadKey();
+        }
+    }
+}
