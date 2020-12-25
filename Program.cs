@@ -274,3 +274,31 @@ namespace _13_дано_нат_число_найти_3
         }
     }
 }
+namespace _9_треугольники
+{
+    class Program
+    {
+        private static double Area(int a, int b, int c)
+        {
+            double p = (a + b + c) / 2;
+            return Math.Sqrt(p * (p - a) * (p - b) * (p - c));
+        }
+        private static double Area(int a, int h)
+        {
+            return a * h / 2;
+        }
+        static void Main(string[] args)
+        {
+            int a, b, c;
+            Console.WriteLine("Введите А = ");
+            a = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Введите B = ");
+            b = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Введите C = ");
+            c = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Площадь Герона = {0:0.00}", Area(a, b, c));
+            Console.ReadKey();
+        }
+
+    }
+}
