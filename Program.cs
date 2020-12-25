@@ -302,3 +302,20 @@ namespace _9_треугольники
 
     }
 }
+using System;
+
+public class RectangleArea
+{
+    public static void Main()
+    {
+        Console.Write("Длина: ");
+        int sideA = Convert.ToInt32(Console.ReadLine());
+        Console.Write("Ширина: ");
+        int sideB = Convert.ToInt32(Console.ReadLine());
+
+        int area = sideA * sideB;
+
+        Console.WriteLine("Площадь прямоугольника: {0}", area);
+        Console.ReadLine();
+    }
+}
